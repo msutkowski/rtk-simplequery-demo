@@ -56,7 +56,7 @@ const PostRow = ({ data: { id, name } }: { data: Post }) => {
 
 export const PostsList = () => {
   const { data: posts } = postApi.hooks.getPosts.useQuery();
-
+  console.log("posts?", posts);
   return (
     <div>
       <h3>Posts</h3>

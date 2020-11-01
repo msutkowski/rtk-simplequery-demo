@@ -1335,6 +1335,15 @@
     redux-thunk "^2.3.0"
     reselect "^4.0.0"
 
+"@reduxjs/toolkit@https://pkg.csb.dev/reduxjs/redux-toolkit/commit/56994225/@reduxjs/toolkit":
+  version "1.4.0"
+  resolved "https://pkg.csb.dev/reduxjs/redux-toolkit/commit/56994225/@reduxjs/toolkit#4e2beed60d6e564d2911d475d3d0055b07b914a1"
+  dependencies:
+    immer "^7.0.3"
+    redux "^4.0.0"
+    redux-thunk "^2.3.0"
+    reselect "^4.0.0"
+
 "@rollup/plugin-node-resolve@^7.1.1":
   version "7.1.3"
   resolved "https://registry.yarnpkg.com/@rollup/plugin-node-resolve/-/plugin-node-resolve-7.1.3.tgz#80de384edfbd7bfc9101164910f86078151a3eca"
@@ -9806,7 +9815,7 @@ rsvp@^4.8.4:
   integrity sha512-nfMOlASu9OnRJo1mbEk2cz0D56a1MBNrJ7orjRZQG10XDyuvwksKbuXNp6qa+kbn839HwjwhBzhFmdsaEAfauA==
 
 "rtk_simple-query@file:.yalc/rtk_simple-query":
-  version "0.1.0-78023e2f"
+  version "0.1.0-3229ccb9"
 
 run-async@^2.4.0:
   version "2.4.1"

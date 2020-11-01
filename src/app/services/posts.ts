@@ -17,7 +17,7 @@ interface QueryArg {
 export const postApi = createApi({
   reducerPath: "postsApi",
   baseQuery({
-    queryString = "",
+    queryString,
     method = "GET",
     body,
     headers = {
