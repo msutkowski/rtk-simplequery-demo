@@ -1,18 +1,18 @@
-import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import {
-  decrement,
-  increment,
-  incrementByAmount,
-  incrementAsync,
-  selectCount,
-} from './counterSlice';
-import styles from './Counter.module.css';
+import React from "react";
+import styles from "./Counter.module.css";
+import { counterApi } from "../../app/services/counter";
 
 export function Counter() {
-  const count = useSelector(selectCount);
-  const dispatch = useDispatch();
-  const [incrementAmount, setIncrementAmount] = useState('2');
+  const { data } = counterApi.hooks.getCount.useQuery();
+  const [
+    increment,
+    incrementResult,
+  ] = counterApi.hooks.incrementCount.useMutation();
+
+  const [
+    decrement,
+    decrementResult,
+  ] = counterApi.hooks.decrementCount.useMutation();
 
   return (
     <div>
@@ -20,39 +20,17 @@ export function Counter() {
         <button
           className={styles.button}
           aria-label="Increment value"
-          onClick={() => dispatch(increment())}
+          onClick={() => increment(1)}
         >
           +
         </button>
-        <span className={styles.value}>{count}</span>
+        <span className={styles.value}>{data?.count || 0}</span>
         <button
           className={styles.button}
           aria-label="Decrement value"
-          onClick={() => dispatch(decrement())}
+          onClick={() => decrement(1)}
         >
           -
-        </button>
-      </div>
-      <div className={styles.row}>
-        <input
-          className={styles.textbox}
-          aria-label="Set increment amount"
-          value={incrementAmount}
-          onChange={e => setIncrementAmount(e.target.value)}
-        />
-        <button
-          className={styles.button}
-          onClick={() =>
-            dispatch(incrementByAmount(Number(incrementAmount) || 0))
-          }
-        >
-          Add Amount
-        </button>
-        <button
-          className={styles.asyncButton}
-          onClick={() => dispatch(incrementAsync(Number(incrementAmount) || 0))}
-        >
-          Add Async
         </button>
       </div>
     </div>
